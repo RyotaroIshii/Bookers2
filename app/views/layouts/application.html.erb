@@ -11,69 +11,51 @@
   </head>
 
   <body>
-    <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-light">
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <a class=“navbar-brand” href=“/“>
+            <span>Bookers</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-ehite' %>
-            </li>
-
-
-
-
-
-
-
-
-
-
-
-            <li class="nav-item">
-              <%= link_to 'Users', "homes/top", class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Books', "homes/top", class: 'nav-link text-white' %>
-            </li>
-
-
-
-
-
-
-
-
-
-
-            <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-            </li>
-            <% else %>
-            <li class="nav-item">
-              <%= link_to 'Home', "homes/top", class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'About', "homes/about", class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
-            </li>
-
-            <% end %>
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="user_path(current_user.id)"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="/users"><i class="fas fa-users"></i> Users</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="/books"><i class="fas fa-book-open"></i> Books</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white"  data-method="delete" href="/users/sign_out"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="homes/top"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="homes/about"><i class="fas fa-link"></i> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="/users/sign_up"><i class="fas fa-user-plus"></i> Sign up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i> Log in</a>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    <main>
     <%= yield %>
+    </main>
   </body>
 </html>
