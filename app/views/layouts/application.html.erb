@@ -14,7 +14,7 @@
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class=“navbar-brand” href=“/“>
+          <a class="navbar-brand text-white" href="/">
             <span>Bookers</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="user_path(current_user.id)"><i class="fas fa-home"></i> Home</a>
+                  <a class="nav-link text-white" href= user_path(current_user.id) ><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="/users"><i class="fas fa-users"></i> Users</a>
@@ -37,10 +37,10 @@
                 </li>
               <% else %>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="homes/top"><i class="fas fa-home"></i> Home</a>
+                  <a class="nav-link text-white" href="/"><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="homes/about"><i class="fas fa-link"></i> About</a>
+                  <a class="nav-link text-white" href="/homes/about"><i class="fas fa-link"></i> About</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="/users/sign_up"><i class="fas fa-user-plus"></i> Sign up</a>
