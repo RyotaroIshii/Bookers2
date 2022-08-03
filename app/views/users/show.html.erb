@@ -4,20 +4,20 @@
     <h2>User info</h2>
     <table class="user-table">
       <tbody>
-        <tr><%= image_tag @user.get_profile_image(100,100) %></tr>
+        <tr></tr>
         <tr>
 	        <th>name</th>
 	        <td><%= @user.name %></td>
         </tr>
         <tr>
 	        <th>introduction</th>
-	        <th><%= @user.introduction %></th>
+	        <th></th>
         </tr>
       </tbody>
     </table>
     
     <div class="row">
-      <% if @user.id == current_user.id %>
+      <% if @user == current_user %>
         <li class="nav-item">
           <a class="nav-link" href="/users/edit"><i class="fas fa-user-cog"></i></a>
         </li>
