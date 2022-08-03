@@ -24,7 +24,7 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href= user_path(current_user.id) ><i class="fas fa-home"></i> Home</a>
+                  <a class="nav-link text-white" href= user_path(current_user) ><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="/users"><i class="fas fa-users"></i> Users</a>
