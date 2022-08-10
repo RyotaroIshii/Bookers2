@@ -39,22 +39,30 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to "/", method: :delete, class: 'nav-link text-light' do %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
 　　                <span class="fas fa-sign-out-alt"></span> Log out
                   <% end %>
                 </li>
               <% else %>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/"><i class="fas fa-home"></i> Home</a>
+                <li>
+            　　　　<%= link_to root_path, class: 'nav-link text-light' do %>
+              　　　<span class="fas fa-home"></span> Home
+            　　  　<% end %>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/home/about"><i class="fas fa-link"></i> About</a>
+                <li>
+                  <%= link_to about_path, class: 'nav-link text-light' do %>
+                    <span class="fas fa-link"></span> About
+                  <% end %>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/users/sign_up"><i class="fas fa-user-plus"></i> Sign up</a>
+                <li>
+                  <%= link_to new_user_registration_path, class: 'nav-link text-light' do %>
+                    <span class="fas fa-user-plus"></span> Sign up
+                  <% end %>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i> Log in</a>
+                <li>
+                  <%= link_to new_user_session_path, class: 'nav-link text-light' do %>
+                    <span class="fas fa-sign-in-alt"></span> Log in
+                  <% end %>
                 </li>
               <% end %>
             </ul>
