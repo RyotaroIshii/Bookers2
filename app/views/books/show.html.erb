@@ -2,17 +2,17 @@
   <div class="row">
   <div class="col-md-3">
     <h2>User info</h2>
-    <%= image_tag current_user.get_profile_image(100,100) %>
+    <%= image_tag @books.user.get_profile_image(100,100) %>
     <table class="user-table">
       <tbody>
         <tr></tr>
         <tr>
 	        <th>name</th>
-	        <th><%= current_user.name %></th>
+	        <th><%= @books.user.name %></th>
         </tr>
         <tr>
 	        <th>introduction</th>
-	        <th><%= current_user.introduction %></th>
+	        <th><%= @books.user.introduction %></th>
         </tr>
       </tbody>
     </table>
@@ -31,4 +31,34 @@
     <% end %>
 　　<%= render template: 'books/new' %>
 　</div>
-　
+　<div class="col-md-8 offset-md-1">
+    <h2>Book detail</h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to user_path(@books.user) do %>
+              <%= image_tag @books.user.get_profile_image(100,100) %></br>
+              <%= @books.user.name %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to book_path(@books.id) do %>
+              <%= @books.title %>
+            <% end %>
+          </td>
+          <td><%= @books.body %></td>
+          <% if @books.user === current_user %>
+          <td>
+            <%= link_to "Edit", edit_book_path(@books), class: 'btn btn-sm btn-success' %>
+          </td>
+          <td>
+            <%= link_to "Destroy", book_path(@books), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: "本当に消しますか？" } %>
+          </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
