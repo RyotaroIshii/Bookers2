@@ -18,13 +18,13 @@
     </table>
     <% if current_user %>
       <div class="row">
-        <%= link_to(edit_user_path(current_user), class: "btn btn-outline-secondary btn-block") do %>
+        <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
           <i class="fas fa-user-cog"></i>
         <% end %>
       </div>
     <% else %>
       <div class="row">
-         <%= link_to(user_path(current_user), class: "btn btn-outline-secondary btn-block") do %>
+         <%= link_to user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
             <i class="fas fa-user-cog"></i>
           <% end %>
       </div>
@@ -47,7 +47,7 @@
               <%= @books.title %>
             <% end %>
           </td>
-          <td><%= @books.body %></td>
+          <td><%= @books.opinion %></td>
           <% if @books.user === current_user %>
           <td>
             <%= link_to "Edit", edit_book_path(@books), class: 'btn btn-sm btn-success' %>
