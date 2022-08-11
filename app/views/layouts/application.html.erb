@@ -25,29 +25,29 @@
               <% if user_signed_in? %>
                 <li>
                   <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
-　　　　　　　　　　<span class="fas fa-home"></span> Home
-　　　　　　　　　<% end %>
+                    <span class="fas fa-home"></span> Home
+                  <% end %>
                 </li>
                 <li>
                   <%= link_to users_path, class: 'nav-link text-light' do %>
-　　                <span class="fas fa-users"></span> Users
+                    <span class="fas fa-users"></span> Users
                   <% end %>
                 </li>
                 <li>
                   <%= link_to books_path, class: 'nav-link text-light' do %>
-　　                <span class="fas fa-book-open"></span> Books
+                    <span class="fas fa-book-open"></span> Books
                   <% end %>
                 </li>
                 <li>
                   <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
-　　                <span class="fas fa-sign-out-alt"></span> Log out
+                    <span class="fas fa-sign-out-alt"></span> Log out
                   <% end %>
                 </li>
               <% else %>
                 <li>
-            　　　　<%= link_to root_path, class: 'nav-link text-light' do %>
-              　　　<span class="fas fa-home"></span> Home
-            　　  　<% end %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <span class="fas fa-home"></span> Home
+                  <% end %>
                 </li>
                 <li>
                   <%= link_to about_path, class: 'nav-link text-light' do %>

@@ -3,11 +3,11 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
       <%= form_with model: @book do |f| %>
-      　<%= render 'books/errormsg', book: @book %>
+        <%= render 'books/errormsg', book: @book %>
         <label for="title">Name</label>
         <%= f.text_field :title, autofocus: true %>
-        <label for="opinion">Opinion</label>
-        <%= f.text_area :opinion %>
+        <label for="body">Opinion</label>
+        <%= f.text_area :body %>
         <%= f.submit "Update Book", class: "btn btn-success" %>
       <% end %>
       <%= link_to "Show", book_path(@book) %> |

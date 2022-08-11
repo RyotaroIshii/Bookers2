@@ -17,21 +17,13 @@
         </tr>
       </tbody>
     </table>
-    <% if current_user %>
-      <div class="row">
-        <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
-          <i class="fas fa-user-cog"></i>
-        <% end %>
-      </div>
-    <% else %>
-      <div class="row">
-         <%= link_to user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
-            <i class="fas fa-user-cog"></i>
-          <% end %>
-      </div>
-    <% end %>
-　　<%= render 'newbook', book: @book %>
-　</div>
-　<%= render 'books', books: @books %>
+    <div class="row">
+      <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
+    </div>
+    <%= render 'newbook', book: @book %>
+  </div>
+  <%= render 'books', books: @books %>
   </div>
 </div>

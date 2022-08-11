@@ -16,22 +16,14 @@
         </tr>
       </tbody>
     </table>
-    <% if current_user %>
-      <div class="row">
-        <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
-          <i class="fas fa-user-cog"></i>
-        <% end %>
-      </div>
-    <% else %>
-      <div class="row">
-         <%= link_to user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
-            <i class="fas fa-user-cog"></i>
-          <% end %>
-      </div>
-    <% end %>
-　　<%= render 'newbook', book: @book %>
-　</div>
-　<div class="col-md-8 offset-md-1">
+    <div class="row">
+      <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
+    </div>
+    <%= render 'newbook', book: @book %>
+  </div>
+  <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
     <table class="table">
       <tbody>
@@ -47,7 +39,7 @@
               <%= @books.title %>
             <% end %>
           </td>
-          <td><%= @books.opinion %></td>
+          <td><%= @books.body %></td>
           <% if @books.user === current_user %>
           <td>
             <%= link_to "Edit", edit_book_path(@books), class: 'btn btn-sm btn-success' %>
