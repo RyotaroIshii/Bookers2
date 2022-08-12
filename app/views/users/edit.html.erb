@@ -15,12 +15,18 @@
           </ul>
           </div>
         <% end %>
-        <label for="inputName">Name</label>
-        <%= f.text_field :name, autofocus: true, class: "user_name" %>
-        <label for="inputImage">ProfileImage</label>
-        <%= f.file_field :profile_image, accept: "image/*" , class: "profile_image"%>
-        <label for="inputIntroduction">Introdcution</label>
-        <%= f.text_area :introduction, class: "introduction" %>
+        <div class="form-group">
+          <label for="user_name">Name</label>
+          <%= f.text_field :name, autofocus: true, class: "form-control name" %>
+        </div>
+        <div class="form-group">
+          <label for="user_image">Image</label>
+          <%= f.file_field :profile_image, accept: "image/*" , class: "form-control-file user_image"%>
+        </div>
+        <div class="form-group">
+          <label for="user_introduction">Introdcution</label><br>
+          <%= f.text_area :introduction, class: "form-control introduction" %>
+        </div>
         <%= f.submit "Update User", class: "btn btn-secondary" %>
       <% end %>
     </div>
